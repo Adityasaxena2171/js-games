@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .btn-lg {
+      width: 50%;
+      font-size: 1.25rem;
+    }
+
+    body {
+      background-color: aqua;
+      background-image: url(images.jpeg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col mt-3 text- center badge bg-primary text-wrap">
+        <h1>Games</h1>
+      </div>
+    </div>
+    <div class="row mb-3 mt-4">
+      <div class="col">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <h1 class="card-title text-center ">ROLL DICE</h1>
+
+              <img id="diceimg" src="main image.webp" class="card-img-top" alt="..." height="300px" width="80px">
+              <div class="card-body btn-center">
+
+                <button id="dice" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">result roll dice</button>
+                <br>
+                <h2 id="result" class="card-title  border-bottom-danger">Roll Dice = ></h2>
+                <br>
+                <button id="reset1" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">reset</button>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <h1 class="card-title text-center ">OTP GENERATOR</h1>
+              <img src="otp.png" class="card-img-top" alt="..." height="300px" width="80px">
+              <div class="card-body btn-center">
+
+                <button id="otp" onclick="rolldice" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">generator otp</button>
+                <br>
+                <h2 id="result2" class="card-title  border-bottom-danger">OTP</h2>
+                <br>
+                <button id="reset2" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">reset</button>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <h1 class="card-title text-center ">ATM PIN GENERATOR</h1>
+
+
+              <img src="atmpin.jpeg" class="card-img-top" alt="..." height="300px" width="80px">
+
+              <div class="card-body btn-center">
+
+                <button id="atm" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">ATM PIN</button>
+                <br>
+                <h2 id="result3" class="card-title  border-bottom-danger">ATM PIN</h2>
+                <br>
+                <button id="reset3" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+                  autocomplete="off">reset</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <h1 class="card-title text-center ">random password generator</h1>
+          <img src="password.jpg" class="card-img-top" alt="..." height="250px" width="80px">
+          <div class="card-body btn-center">
+
+            <button id="password" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+              autocomplete="off">PASSWORD</button>
+            <br>
+            <h2 id="result4" class="card-title  border-bottom-danger">PASSWORD</h2>
+            <br>
+            <button id="reset4" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+              autocomplete="off">reset</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <h1 class="card-title text-center ">QUOTES GENERATOR</h1>
+          <img id="qrimg" src="quotes.jpg" class="card-img-top" alt="..." height="300px" width="80px">
+          <div class="card-body btn-center">
+            <button id="qu" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+              autocomplete="off">GENERATOR</button>
+            <br>
+            <h3 id="result6" class="card-title  border-bottom-danger">QUOTES</h3>
+            <br>
+            <button id="reset6" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+              autocomplete="off">reset</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <h1 class="card-title text-center ">STONE PAPER SCISSORS</h1>
+          <img src="stone.png" class="card-img-top">
+          <div class="card-body btn-center">
+
+            <div>
+              <button class="btn btn-primary" onclick="game(1)">Rock </button>
+              <button class="btn btn-primary" onclick="game(2)">Paper</button>
+              <button class="btn btn-primary" onclick="game(3)">Scissor</button>
+            </div>
+            <br>
+            <h2 id="result5" class="card-title  border-bottom-danger">WINNER</h2>
+            <br>
+            <button id="reset5" type="button" class="btn btn-primary btn-lg" data-bs-toggle="button"
+              autocomplete="off">reset</button>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
